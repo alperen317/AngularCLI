@@ -1,0 +1,18 @@
+<div class="container">
+  <h3 class="mt-3">Practicing Property & Event Binding and View Encapsulation</h3>
+  <div class="row">
+   <app-game-control (sendNumber)="onGameNumber($event)"></app-game-control>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+        <app-even *ngFor="let even of evenNumbers" [number]="even"></app-even>
+    </div>
+    
+  </div>
+  <div class="row">
+      <div class="col-xs-12">
+          <app-odd *ngFor="let odd of oddNumbers" [number]="odd"></app-odd>
+      </div>
+      
+  </div>
+</div>
