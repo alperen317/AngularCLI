@@ -1,0 +1,56 @@
+<div class="container">
+  <form #signupForm='ngForm' (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Ad</label>
+    <input type="text" name="name" id="name"
+    ngModel
+    required
+    class="form-control"
+    #name="ngModel"
+    >
+    <span class="help-block  mt-2" *ngIf="!name.valid && name.touched">Kontrol ! </span>
+  </div>
+  <div class="form-group">
+    <label for="name">Soyad</label>
+    <input type="text" name="lastname" id="lastname"
+    ngModel
+    required
+    class="form-control"
+    #lastname="ngModel"
+    >
+    <span class="help-block  mt-2" *ngIf="!lastname.valid && lastname.touched">Kontrol ! </span>
+  </div>
+  <div class="form-group">
+    <label for="tcNo">TC Kimlik No</label>
+    <input type="text" name="tcNo" id="tcNo"
+    ngModel 
+    #tcNo="ngModel"
+    class="form-control"
+    required 
+    appTcControl
+    >
+    <span class="help-block mt-2" *ngIf="!tcNo.valid && tcNo.touched">Kontrol ! </span>
+  </div>
+   <div class="form-group">
+     <label for="email">Mail</label>
+     <input type="email" name="email" id="email"
+     ngModel
+     required
+     email
+     class="form-control"
+     #email="ngModel"
+     >
+     <span class="help-block  mt-2" *ngIf="!email.valid && email.touched">Kontrol ! </span>
+   </div>
+   <p *ngIf="!signupForm.valid && signupForm.touched">Bilgileri kontrol edin!</p>
+   <button [disabled]="!signupForm.valid" class="btn btn-primary" type="submit">Submit</button>
+  </form>
+  <div class="mt-5 row" *ngIf="submitted">
+      <div class="col-xs-12">
+        <p>Ad : {{ data.ad }} </p>
+        <p>Soyad : {{ data.soyad }} </p>
+        <p>TC No: {{ data.tcNo }} </p>
+        <p>Email : {{ data.email }} </p>
+      </div>
+    </div>
+</div>
