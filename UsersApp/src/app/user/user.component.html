@@ -1,3 +1,6 @@
+<div class="alert alert-success" *ngIf="submitted">
+    <p>Success</p>
+  </div> 
 <form #signupForm='ngForm' (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="name">Name</label>
@@ -19,7 +22,7 @@
         <input type="text" name="avatar" id="avatar" ngModel required class="form-control" #avatar="ngModel">
         <span class="help-block  mt-2" *ngIf="!avatar.valid && avatar.touched">Kontrol ! </span>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="!submitted">
         <div class="col-xs-12 ml-5">
           <img [src]="avatar.value" class="img-responsive" />
         </div>

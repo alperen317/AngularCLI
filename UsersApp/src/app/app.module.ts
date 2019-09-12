@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserModule } from './user/user.module';
-import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
+
+
 
 @NgModule({
   declarations: [

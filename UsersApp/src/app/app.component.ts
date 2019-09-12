@@ -1,7 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { DataService } from 'src/shared/data.service';
-import { User } from './user/user.model';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',

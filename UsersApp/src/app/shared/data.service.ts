@@ -25,7 +25,7 @@ export class DataService {
         return this.http.put<User>('http://5d78b288a8c27100149863f8.mockapi.io/users/' + id, user);
     }
     deleteUser(id: string) {
-        return this.http.delete<User>('http://5d78b288a8c27100149863f8.mockapi.io/users/'+ id);
+        return this.http.delete<User>('http://5d78b288a8c27100149863f8.mockapi.io/users/' + id);
     }
 
 }
