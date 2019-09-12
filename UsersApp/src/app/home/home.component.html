@@ -9,6 +9,7 @@
                     </span>
                     <div>
                         <p class="list-group-item-heading"> {{ userEl.name }}</p>
+                        <p class="list-group-item-heading"> {{ userEl.name | namePipe }}</p>
                         <p> {{ userEl.email}}</p>
                         <p> {{ userEl.identity}}</p>
                         <p> {{ userEl.createdAt | date: 'short'}}</p>

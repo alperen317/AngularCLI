@@ -39,6 +39,7 @@ export class UserComponent implements OnInit {
         );
       this.dataService.addNewUser(newUser).subscribe( posts => {
         this.submitted = true;
+        this.router.navigate(['/']);
         this.signupForm.reset();
       }, error => {
         console.log(error);
@@ -53,6 +54,7 @@ export class UserComponent implements OnInit {
 
       this.dataService.editUser(this.editUser.id, this.editUser).subscribe ( user => {
         this.submitted = true;
+         this.router.navigate(['/']);
         this.signupForm.reset();
       }, error => {
         console.log(error);
