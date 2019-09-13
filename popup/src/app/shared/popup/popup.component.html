@@ -1,0 +1,9 @@
+<div class="backdrop" *ngIf="opened">
+
+    <div class="box">
+            <button (click)="closeOn()" class="btn btn-danger">X</button>
+            <h1> {{ title }} </h1>
+            <ng-content ></ng-content>
+            <ng-content ></ng-content>
+    </div>   
+</div>
