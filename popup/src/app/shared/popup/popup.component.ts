@@ -8,10 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PopupComponent implements OnInit {
 @Input() title: string;
 @Input() opened: boolean;
+
   constructor() { }
 
   ngOnInit() {
-   
+
   }
   closeOn() {
     this.opened = false;

@@ -1,6 +1,7 @@
 <div>  
         <!-- *ngIf="opened" -->
     <app-popup title="Title"   [opened]="opened">
+        <hr>
         <app-popup-content>
             <div> Hello </div>
         </app-popup-content>
@@ -12,5 +13,5 @@
 
 <div class="container">
     <h1>App Component</h1>
-    <button class="btn btn-primary" (click)="onOpened()">True - False</button>
+    <button class="btn btn-primary" (click)="onOpened()">Open</button>
 </div>

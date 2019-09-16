@@ -11,6 +11,6 @@ export class AppComponent {
 
   onOpened() {
     this.opened =  !this.opened;
-
+ 
   }
 }
