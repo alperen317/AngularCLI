@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PopupModule } from './shared/popup/popup.module';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 
 
@@ -12,6 +13,7 @@ import { PopupModule } from './shared/popup/popup.module';
 @NgModule({
   declarations: [
     AppComponent,
+    DropdownComponent,
     // PopupContentComponent,
     // PopupFooterComponent,
     // PopupComponent,

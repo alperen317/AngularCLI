@@ -1,6 +1,6 @@
 <div>  
         <!-- *ngIf="opened" -->
-    <app-popup title="Title"   [opened]="opened">
+    <app-popup title="Title" (event)="onEvent($event)"  [opened]="opened">
         <hr>
         <app-popup-content>
             <div> Hello </div>
