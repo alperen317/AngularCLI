@@ -1,0 +1,7 @@
+<div class="col">
+    <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+        <div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button *ngFor="let item of dropArray" (click)="onSelect(item)" ngbDropdownItem> {{ item.id }} </button>
+        </div>
+    </div>
