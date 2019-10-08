@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 import { UserComponent } from './user.component';
 import { UserRoutingModule } from './user-routing.module';
 import { TcControlDirective } from './tcControl.directive';
+import { DataMockapiService } from '../shared/data-mockapi.service';
+import { DataService } from '../shared/data.service';
+import { DataMockService } from '../shared/data-mock.service';
 
 
 
@@ -18,6 +21,12 @@ import { TcControlDirective } from './tcControl.directive';
     RouterModule,
     CommonModule,
     UserRoutingModule
+  ],
+  providers: [
+    {
+        provide: DataService,
+        useClass: DataMockapiService,
+    }
   ]
 })
 export class UserModule { }

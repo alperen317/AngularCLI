@@ -9,9 +9,6 @@ import { UserModule } from './user/user.module';
 import { HomeModule } from './home/home.module';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +20,7 @@ import { HomeModule } from './home/home.module';
     AppRoutingModule,
     UserModule,
     HomeModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

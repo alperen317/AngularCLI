@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../shared/data.service';
 import { Subscription } from 'rxjs';
 import { User } from '../user/user.model';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit , OnDestroy {
 
   data: User[];
   subscription: Subscription;
-  constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
     this.subscription = this.dataService.fetchUsers().subscribe(
@@ -22,9 +22,9 @@ export class HomeComponent implements OnInit , OnDestroy {
     );
   }
 
-  userEdit(id: string) {
-    this.router.navigate(['/user', id]);
-  }
+  // userEdit(id: string) {
+  //   this.router.navigate(['/user', id]);
+  // }
 
 
   ngOnDestroy() {

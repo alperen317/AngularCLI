@@ -1,42 +1,42 @@
 <div class="alert alert-success" *ngIf="submitted">
-    <p>Success</p>
+    <p data-test-id="HelpSuccess">Success</p>
   </div> 
+<h1> {{editMode ? title2 : title }} </h1>
 <form #signupForm='ngForm' (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" ngModel required class="form-control" #name="ngModel">
-        <span class="help-block  mt-2" *ngIf="!name.valid && name.touched">Kontrol ! </span>
+        <!-- <input type="text" name="name" id="name"  ngModel required class="form-control" #name="ngModel"> -->
+        <input type="text" name="name" data-test-id="name" id="name"  ngModel required class="form-control" #name="ngModel">
+        <span class="help-block  mt-2" data-test-id="helpName" *ngIf="!name.valid && name.touched">Kontrol ! </span>
     </div>
     <div class="form-group">
         <label for="email">Mail</label>
-        <input type="email" name="email" id="email" ngModel required email class="form-control" #email="ngModel">
-        <span class="help-block  mt-2" *ngIf="!email.valid && email.touched">Kontrol ! </span>
+        <input type="email" name="email" data-test-id="email" id="email" ngModel required email class="form-control" #email="ngModel">
+        <span class="help-block  mt-2" data-test-id="helpEmail" *ngIf="!email.valid && email.touched">Kontrol ! </span>
     </div>
     <div class="form-group">
         <label for="tcNo">TC </label>
-        <input type="text" name="tcNo" id="tcNo" ngModel #tcNo="ngModel" class="form-control" required appTcControl>
-        <span class="help-block mt-2" *ngIf="!tcNo.valid && tcNo.touched">Kontrol ! </span>
+        <input type="text" name="tcNo" id="tcNo" data-test-id="tc" ngModel #tcNo="ngModel" class="form-control" required appTcControl>
+        <span class="help-block mt-2" data-test-id="helpTc" *ngIf="!tcNo.valid && tcNo.touched">Kontrol ! </span>
     </div>
     <div class="form-group">
         <label for="name">Avatar</label>
-        <input type="text" name="avatar" id="avatar" ngModel required class="form-control" #avatar="ngModel">
-        <span class="help-block  mt-2" *ngIf="!avatar.valid && avatar.touched">Kontrol ! </span>
+        <input type="text" name="avatar" data-test-id="avatar" id="avatar" ngModel required class="form-control" #avatar="ngModel">
+        <span class="help-block  mt-2" data-test-id="helpAvatar" *ngIf="!avatar.valid && avatar.touched">Kontrol ! </span>
     </div>
     <div class="row" *ngIf="!submitted">
         <div class="col-xs-12 ml-5">
-          <img [src]="avatar.value" class="img-responsive" />
+          <img name="img" id="img" [src]="avatar.value" class="img-responsive" />
         </div>
       </div>
     <div class="form-group">
             <label for="name">Id</label>
-            <input type="text" name="id" id="id" ngModel required class="form-control" #id="ngModel">
-            <span class="help-block  mt-2" *ngIf="!id.valid && id.touched">Kontrol ! </span>
+            <input type="text" data-test-id="id" name="id" id="id" ngModel required class="form-control" #id="ngModel">
+            <span  data-test-id="helpId" class="help-block  mt-2" *ngIf="!id.valid && id.touched">Kontrol ! </span>
         </div>
 
-    <p *ngIf="!signupForm.valid && signupForm.touched">Bilgileri kontrol edin!</p>
+    <p data-test-id='HelpForm' *ngIf="!signupForm.valid && signupForm.touched">Bilgileri kontrol edin!</p>
     <button [disabled]="!signupForm.valid" class="btn btn-primary" type="submit"> {{ editMode ? 'Save Edit' : 'Submit' }} </button>
-
-    
 </form>
 
 <button *ngIf="editMode" (click)="deleteUser()" class="btn btn-danger mt-3">Delete</button> 
