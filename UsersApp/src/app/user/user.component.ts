@@ -47,9 +47,11 @@ export class UserComponent implements OnInit {
         this.submitted = true;
         this.router.navigate(['/']);
         this.signupForm.reset();
-      }, error => {
-        console.log(error);
-      });
+      }
+      // , error => {
+      //   console.log(error);
+      // }
+      );
     } else {
       console.log('else');
       this.editUser.name = this.signupForm.value.name;
@@ -76,9 +78,11 @@ export class UserComponent implements OnInit {
       console.log(user);
       this.router.navigate(['/']);
       this.signupForm.reset();
-    }, error => {
-      console.log(error);
-    });
+    }
+    // , error => {
+    //   console.log(error);
+    // }
+  );
   }
 
   getUser(id) {
@@ -91,26 +95,21 @@ export class UserComponent implements OnInit {
       //(document.getElementById('img') as HTMLImageElement).src = this.editUser.avatar;
       (document.getElementById('id') as HTMLInputElement).value =  this.editUser.id;
       (document.getElementById('tcNo') as HTMLInputElement).value =  '89205626840';
-      // this.signupForm.setValue({
-      //   name : this.editUser.name,
-      //   email : this.editUser.email,
-      //   // tcNo : this.editUser.identity,
-      //   tcNo : '89205626840',
-      //   avatar : this.editUser.avatar,
-      //   id : this.editUser.id
-      // });
-
-    }, error => {
-      console.log('Get user error' + error);
-    });
+    }
+    // , error => {
+    //   console.log('Get user error' + error);
+    // }
+    );
   }
   deleteUser() {
     //this.signupForm.reset();
     this.dataService.deleteUser(this.id).subscribe( response => {
       console.log('delete');
       this.router.navigate(['/']);
-    }, error => {
-      console.log(error);
-    });
+    }
+    // , error => {
+    //   console.log(error);
+    // }
+    );
   }
 }

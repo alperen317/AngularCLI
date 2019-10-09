@@ -1,5 +1,5 @@
 import { TestBed, async, ComponentFixture, fakeAsync, flush, tick } from '@angular/core/testing';
-import { Router, ActivatedRoute, Data, convertToParamMap } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UserComponent } from './user.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { DataService } from '../shared/data.service';
@@ -33,7 +33,6 @@ describe('User Component', () => {
                     }
                 },
                 { provide: DataService, useValue: mockDataService },
-                // { provide: Router, useValue: mockRouter }
                 { provide: Router, useValue: routerSpy }
             ]
         }).compileComponents().then(() => {
@@ -274,6 +273,7 @@ describe('User Component EditMode = True Save', () => {
     it('id = 4 ', fakeAsync( () => {
         fixture.detectChanges();
         expect(fixture.componentInstance.id).toBe('4');
+        
     }));
     it('EditUser ', () => {
         expect(fixture.componentInstance.editUser).toBe(undefined);
@@ -282,7 +282,7 @@ describe('User Component EditMode = True Save', () => {
         expect(fixture.componentInstance.editUser).not.toBe(undefined);
         expect(fixture.componentInstance.editMode).toBeTruthy();
     });
-    it('Edit User', fakeAsync( () => {
+    it('Edit User ', fakeAsync( () => {
         fixture.detectChanges();
         //console.log(fixture.componentInstance.editUser);
         fixture.componentInstance.editUser.name = 'Ali';

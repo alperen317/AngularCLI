@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit , OnDestroy {
 
   data: User[];
   subscription: Subscription;
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private router: Router) {}
 
   ngOnInit() {
     this.subscription = this.dataService.fetchUsers().subscribe(
@@ -22,9 +22,12 @@ export class HomeComponent implements OnInit , OnDestroy {
     );
   }
 
-  // userEdit(id: string) {
-  //   this.router.navigate(['/user', id]);
-  // }
+  userEdit(id: string) {
+    let url = '/user/$id';
+    console.log("useredit");
+    // this.router.navigateByUrl(['/user', id]);
+    this.router.navigate(['/user/'+id]);
+  }
 
 
   ngOnDestroy() {
